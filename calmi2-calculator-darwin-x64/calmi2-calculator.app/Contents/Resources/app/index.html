@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>CalMI2 Challenge</title>
+  <link rel="stylesheet" href="index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rokkitt&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <header class="header">
+    <h1>CalMI2 Challenge</h1>
+    <p> This basic calculator app is using Node
+      <script>document.write(process.versions.node)</script>,
+      Chromium
+      <script>document.write(process.versions.chrome)</script>,
+      and Electron
+      <script>document.write(process.versions.electron)</script>.</p>
+    <p>Enter a number into each of the input boxes, then hit the "sum" button.</p>
+  </header>
+
+  <contents class="contents">
+    <div class="card">
+      <div class="top">
+        <input class="box" id="num-1"></input>
+        <span> + </span>
+        <input class="box" id="num-2"></input>
+        <span> = </span>
+        <input readonly class="box" id="result"> </input>
+      </div>
+      <hr width="50%" color="#ffffff">
+      <div class="bot">
+        <button id="sum-button"> sum </button>
+      </div>
+    </div>
+  </contents>
+
+  <footer class="footer">
+    <div class="source-code" onclick="window.open('https://github.com/winn-cui/calmi2-calculator');">
+      <img src="https://img.icons8.com/bubbles/100/000000/github.png" />
+      <div>made with ❤️</div>
+    </div>
+  </footer>
+</body>
+
+<script>
+  require('./renderer.js')
+</script>
+
+</html>

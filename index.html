@@ -39,7 +39,7 @@
   </contents>
 
   <footer class="footer">
-    <div class="source-code">
+    <div class="source-code" onclick="window.open('https://github.com/winn-cui/calmi2-calculator');">
       <img src="https://img.icons8.com/bubbles/100/000000/github.png" />
       <div>made with ❤️</div>
     </div>
@@ -48,14 +48,6 @@
 
 <script>
   require('./renderer.js')
-
-  document.addEventListener("keydown", function (e) {
-    if (e.which === 48) {
-      require('remote').getCurrentWindow().toggleDevTools();
-    } else if (e.which === 116) {
-      location.reload();
-    }
-  });
 </script>
 
 </html>

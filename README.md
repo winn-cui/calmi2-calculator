@@ -33,7 +33,7 @@ npx electron # to check if Electron installation works
 ```
 
 ## Packaging the Python Backend
-Make sure you are using Python 3.7.0
+Make sure you are using your Python virtual environment.
 
 ```bash
 pyinstaller pycalc/api.py --distpath pycalcdist # execute from the root of the project folder

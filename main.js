@@ -1,5 +1,4 @@
 const electron = require("electron");
-const log = require("electron-log");
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 const path = require("path");
@@ -17,7 +16,6 @@ let pyPort = null;
 
 const guessPackaged = () => {
   const fullPath = path.join(__dirname, PY_DIST_FOLDER);
-  log.info("20", require("fs").existsSync(fullPath));
   return require("fs").existsSync(fullPath);
 };
 
@@ -28,7 +26,6 @@ const getScriptPath = () => {
   if (process.platform === "win32") {
     return path.join(__dirname, PY_DIST_FOLDER, PY_MODULE, PY_MODULE + ".exe");
   }
-  log.info("31");
   return path.join(__dirname, PY_DIST_FOLDER, PY_MODULE, PY_MODULE);
 };
 
@@ -40,17 +37,13 @@ const selectPort = () => {
 const createPyProc = () => {
   let script = getScriptPath();
   let port = "" + selectPort();
-  log.info("41", script);
-  log.info("42", script);
   if (guessPackaged()) {
-    console.log("46");
     pyProc = require("child_process").execFile(script, [port]);
   } else {
     pyProc = require("child_process").spawn("python", [script, port]);
   }
 
   if (pyProc != null) {
-    // console.log(pyProc)
     console.log("child process success on port " + port);
   }
 };
@@ -86,16 +79,11 @@ const createWindow = () => {
       slashes: true,
     }),
   );
-  // mainWindow.webContents.openDevTools();
-
+  
   mainWindow.on("closed", () => {
     mainWindow = null;
   });
 };
-
-const ret = globalShortcut.register("CommandOrControl+Shift+I", () => {
-  mainWindow.webContents.toggleDevTools();
-});
 
 app.on("ready", createWindow);
 
