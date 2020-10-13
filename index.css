@@ -1,0 +1,194 @@
+:root {
+    --padding: 0px 40px; 
+}
+
+::selection { 
+    background: white; /* WebKit/Blink Browsers */ 
+}
+
+html {
+    height: 100vh;
+}
+
+.box {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    display: inline-block;
+}
+
+.card button {
+    padding: 15px;
+    border-radius: 20%;
+    background-color: white;
+    border: solid;
+    border-color: skyblue;
+}
+
+.card button:hover {
+    border-color: #ceeb87; 
+    padding: 15px;
+    border-radius: 20%;
+    cursor: pointer;
+}
+
+body {
+    height: 100vh;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer {
+    display: flex;
+    width: 100%;
+    height: calc(120px + 2vh);
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+}   
+
+.footer img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.source-code {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Rokkitt', serif;
+}
+
+.source-code:hover {
+    cursor: pointer;
+}
+
+.header {
+    display: flex;
+    background-color: #ffddbb;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+.header * {
+    padding: 20px 15px;
+}
+
+.header > *:first-child {
+    padding-left: 200px;
+    padding-right: 25px;
+    font-family: 'Rokkitt', serif;
+}
+
+.header > *:last-child {
+    padding-right: 200px;
+}
+
+/* For styling horizontal responsiveness */
+@media (max-width: 950px) {
+    .header {
+        transition: ease all .5s;
+        display: flex;
+        flex-direction: column;
+        background-color: #ffddbb;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        padding: 30px 0px;
+
+    }
+    
+    .header * {
+        padding: 2px 0px;
+        width: 75%;
+        margin: 4px;
+    }
+    
+    .header > *:first-child {
+        padding-top: calc(100px - 6vw);
+        padding-left: 0px;
+        padding-bottom: 5px;
+        text-align: center;
+    }
+    
+    .header > *:last-child {
+        padding-right: 0px;
+        padding-bottom: calc(100px - 6vw);
+    }
+
+    @media (max-width:415px) {
+        .contents .card {
+            transition: ease all .5s;
+            height: 100%;
+            width: 100%;
+            background-color: skyblue;
+        }
+    }
+
+  }
+
+/* For styling vertical responsiveness */
+@media (max-height:500px) {
+    .contents .card {
+        transition: ease all .5s;
+        height: 100%;
+        width: 100%;
+        background-color: skyblue;
+    }
+}
+
+@media (max-height:600px) and (max-width:415px) {
+    .header {
+        transition: ease all .5s;
+        font-size: .8em;
+    }
+
+    .header > *:first-child {
+        padding-bottom: 0px;
+    }
+}
+
+.contents {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    height: calc(150px + 15vw);
+    width: calc(350px + 15vw);
+    background-color: skyblue;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-shadow: 10px 10px 30px 3px rgba(0,0,0,0.55);
+    -moz-box-shadow: 10px 10px 30px 3px rgba(0,0,0,0.55);
+    box-shadow: 10px 10px 30px 3px rgba(0,0,0,0.55);
+}
+
+.card .top {
+    padding-bottom: 25px;
+
+}
+
+.card .bot {
+    padding-top: 25px;
+}
+
+
+
+hr {
+    height: 1px;
+    border: none;
+}

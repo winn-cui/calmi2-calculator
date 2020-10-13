@@ -1,5 +1,5 @@
 {
-  "name": "pretty-calculator",
+  "name": "calmi2-calculator",
   "version": "1.0.0",
   "description": "A minimal Electron and Python - based calculator ",
   "main": "main.js",
@@ -16,10 +16,15 @@
   "author": "fyears",
   "license": "MIT",
   "dependencies": {
-    "zerorpc": "git+https://github.com/0rpc/zerorpc-node.git"
+    "electron-log": "^4.2.4",
+    "zerorpc": "0.9.8"
   },
   "devDependencies": {
-    "electron": "^1.7.6",
+    "electron": "^1.8.8",
     "electron-packager": "^9.0.1"
+  },
+  "engines": {
+    "node": "8.2.1",
+    "npm": "5.3.0"
   }
 }
